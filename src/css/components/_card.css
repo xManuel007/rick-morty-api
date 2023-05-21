@@ -1,0 +1,99 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.card-container {
+  border-radius: 10px;
+  box-shadow:  13px 13px 26px #bebebe, -13px -13px 26px #ffffff;
+  margin: 2rem;
+  position: relative;
+  transition: 0.5s;
+}
+
+.card-container:hover {
+  box-shadow:  30px 30px 60px #9b9b9b,-30px -30px 60px #ffffff;
+}
+
+.card-container .card-info {
+  background-color: black;
+  bottom: 0;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0.8;
+  position: absolute;
+  width: 100%;
+  border-radius: 0 0 16px 16px;
+  height: 2.4rem;
+  transition: height 0.5s;
+  transform-origin: bottom;
+  transform: scaleY(1);
+}
+
+.card-info {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 16px;
+}
+
+.card-info p {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: 1.2;
+  max-height: 2.4em;
+}
+
+.card-container:hover .card-info {
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  transform: scaleY(1);
+}
+
+.card-container .card-info p {
+  margin: 1rem;
+}
+
+img {
+  border-radius: 10px;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.pagination-buttons button {
+  margin-left: 1rem;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 0.5rem;
+  transition: 0.5s;
+}
+
+.pagination-buttons button:hover {
+  background-color: grey;
+}
+
+@media screen and (max-width: 420px) {
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (min-width: 421px) and (max-width: 800px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-container .card-info {
+    font-size: 1rem;
+  }
+}
